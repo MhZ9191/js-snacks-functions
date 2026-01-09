@@ -14,9 +14,9 @@ const greet = (nameFun) => {
   const currentHour = current.getHours();
   let message = "";
 
-  if (currentHour > 0 && currentHour < 13) {
+  if (currentHour <= 13) {
     message = "Buongiorno " + nameFun;
-  } else if (currentHour >= 13 && currentHour < 17) {
+  } else if (currentHour > 13 && currentHour < 17) {
     message = "Buon pomeriggio " + nameFun;
   } else {
     message = "Buonasera " + nameFun;
