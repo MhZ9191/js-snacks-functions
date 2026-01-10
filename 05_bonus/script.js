@@ -12,16 +12,26 @@ const name = "Mario";
 const greet = (nameFun) => {
   const current = new Date();
   const currentHour = current.getHours();
-  let message = "";
+  //let message = "";
+  // if (currentHour <= 13) {
+  //   message = "Buongiorno " + nameFun;
+  // } else if (currentHour > 13 && currentHour < 17) {
+  //   message = "Buon pomeriggio " + nameFun;
+  // } else {
+  //   message = "Buonasera " + nameFun;
+  // }
+
+  //!alternative
+  const messages = ["Buonasera", "Buongiorno", "Buon pomeriggio"];
+  let choiceMessage = 0;
 
   if (currentHour <= 13) {
-    message = "Buongiorno " + nameFun;
+    choiceMessage = 1;
   } else if (currentHour > 13 && currentHour < 17) {
-    message = "Buon pomeriggio " + nameFun;
-  } else {
-    message = "Buonasera " + nameFun;
+    choiceMessage = 2;
   }
 
+  const message = `${messages[choiceMessage]} ${name}`;
   return message;
 };
 
